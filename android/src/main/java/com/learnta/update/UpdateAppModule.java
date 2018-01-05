@@ -1,18 +1,19 @@
 package com.learnta.update;
 
+import android.content.Context;
+import android.content.Intent;
+
 import com.facebook.react.bridge.ReactApplicationContext;
-import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
-import com.loveplusplus.update.UpdateChecker;
 
-public class UpdateApp extends ReactContextBaseJavaModule {
+public class UpdateAppModule extends ReactContextBaseJavaModule {
 
-    private ReactContext reactContext;
+    private Context context;
 
-    public UpdateApp(ReactApplicationContext reactContext) {
+    public UpdateAppModule(ReactApplicationContext reactContext) {
         super(reactContext);
-        this.reactContext = reactContext;
+        this.context = reactContext;
     }
 
     @Override
@@ -26,7 +27,7 @@ public class UpdateApp extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void downloadApk() {
+    public void downloadApk(String downloadUrl) {
         Intent intent = new Intent(context.getApplicationContext(), DownloadService.class);
         intent.putExtra(Constants.APK_DOWNLOAD_URL, downloadUrl);
         context.startService(intent);
