@@ -8,18 +8,25 @@ import {
     AppState
 } from 'react-native'
 
-var clearCacheModuleObj = NativeModules.ClearCacheModule;
+var updateAppModuleObj = NativeModules.UpdateAppModule;
 
-class clear {
+class updateApp {
   constructor () {
   }
 
-  getAppCacheSize(callBack) {
-      clearCacheModuleObj.getAppCacheSize(callBack);
+  /**
+  * android下载apk
+  */
+  downloadApp(apkUrl) {
+      updateAppModuleObj.downloadApp(apkUrl);
   }
 
-  clearAppCache(callBack) {
-      clearCacheModuleObj.clearAppCache(callBack);
+  /**
+  * iOS打开appstore
+  */
+  openAPPStore(appStoreId) {
+      updateAppModuleObj.openAPPStore(appStoreId);
   }
+
 }
-export default new clear();
+export default new updateApp();

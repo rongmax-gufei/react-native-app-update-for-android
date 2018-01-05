@@ -27,7 +27,7 @@ public class UpdateAppModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void downloadApk(String downloadUrl) {
+    public void downloadApp(String downloadUrl) {
         Intent intent = new Intent(context.getApplicationContext(), DownloadService.class);
         intent.putExtra(Constants.APK_DOWNLOAD_URL, downloadUrl);
         context.startService(intent);
