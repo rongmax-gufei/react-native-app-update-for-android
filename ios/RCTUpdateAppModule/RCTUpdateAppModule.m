@@ -8,7 +8,6 @@
 
 #import "RCTUpdateAppModule.h"
 #import <React/RCTBridgeModule.h>
-#import "AppDelegate.h"
 
 @implementation RCTUpdateAppModule
 
