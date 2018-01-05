@@ -15,7 +15,7 @@
 
 RCT_EXPORT_MODULE();
 
-RCT_EXPORT_METHOD(openAPPStore:(NSString *) storeappID callback:(RCTResponseSenderBlock) callback) {
+RCT_EXPORT_METHOD(openAPPStore:(NSString *)storeappID callback:(RCTResponseSenderBlock)callback) {
     //2先获取当前工程项目版本号
     NSDictionary *infoDic=[[NSBundle mainBundle] infoDictionary];
     NSString*currentVersion=infoDic[@"CFBundleShortVersionString"];

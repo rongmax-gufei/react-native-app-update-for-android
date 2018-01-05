@@ -24,8 +24,8 @@ class updateApp {
   /**
   * iOS打开appstore
   */
-  openAPPStore(appStoreId) {
-      updateAppModuleObj.openAPPStore(appStoreId);
+  openAPPStore(appStoreId, callback) {
+      updateAppModuleObj.openAPPStore(appStoreId, callback);
   }
 
 }
