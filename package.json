@@ -1,6 +1,6 @@
 {
   "name": "react-native-app-update-for-android",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "版本更新 ReactNative封装 支持android",
   "main": "index.js",
   "scripts": {
