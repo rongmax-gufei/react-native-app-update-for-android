@@ -75,10 +75,10 @@ RCT_EXPORT_METHOD(openAPPStore:(NSString *)storeappID callback:(RCTResponseSende
         //          UIViewController * vc = [[[UIApplication sharedApplication].delegate window] rootViewController];
         //            [vc presentViewController:alercConteoller animated:YES completion:nil];
         
-        callback( [[NSArray alloc] initWithObjects:@"YES", nil]);
+        callback([[NSArray alloc] initWithObjects:@"YES", nil]);
     } else {
         NSLog(@"版本号好像比商店大噢!检测到不需要更新");
-        callback( [[NSArray alloc] initWithObjects:@"NO", nil]);
+        callback([[NSArray alloc] initWithObjects:@"NO", nil]);
     }
 }
 @end
