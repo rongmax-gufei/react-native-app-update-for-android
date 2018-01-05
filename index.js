@@ -11,6 +11,7 @@ import {
 var updateAppModuleObj = NativeModules.UpdateAppModule;
 
 class updateApp {
+
   constructor () {
   }
 
