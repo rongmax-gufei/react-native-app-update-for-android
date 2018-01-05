@@ -15,8 +15,7 @@
 
 RCT_EXPORT_MODULE();
 
-RCT_EXPORT_METHOD(openAPPStore:(NSString *)storeappID callback:(RCTResponseSenderBlock)callback){
-    
+RCT_EXPORT_METHOD(openAPPStore:(NSString *) storeappID callback:(RCTResponseSenderBlock) callback) {
     //2先获取当前工程项目版本号
     NSDictionary *infoDic=[[NSBundle mainBundle] infoDictionary];
     NSString*currentVersion=infoDic[@"CFBundleShortVersionString"];
@@ -48,13 +47,13 @@ RCT_EXPORT_METHOD(openAPPStore:(NSString *)storeappID callback:(RCTResponseSende
     currentVersion = [currentVersion stringByReplacingOccurrencesOfString:@"." withString:@""];
     if (currentVersion.length==2) {
         currentVersion  = [currentVersion stringByAppendingString:@"0"];
-    }else if (currentVersion.length==1){
+    } else if (currentVersion.length==1){
         currentVersion  = [currentVersion stringByAppendingString:@"00"];
     }
     appStoreVersion = [appStoreVersion stringByReplacingOccurrencesOfString:@"." withString:@""];
     if (appStoreVersion.length==2) {
         appStoreVersion  = [appStoreVersion stringByAppendingString:@"0"];
-    }else if (appStoreVersion.length==1){
+    } else if (appStoreVersion.length==1){
         appStoreVersion  = [appStoreVersion stringByAppendingString:@"00"];
     }
     
@@ -76,20 +75,10 @@ RCT_EXPORT_METHOD(openAPPStore:(NSString *)storeappID callback:(RCTResponseSende
         //          UIViewController * vc = [[[UIApplication sharedApplication].delegate window] rootViewController];
         //            [vc presentViewController:alercConteoller animated:YES completion:nil];
         
-        
         callback( [[NSArray alloc] initWithObjects:@"YES", nil]);
-        
-    }else{
+    } else {
         NSLog(@"版本号好像比商店大噢!检测到不需要更新");
         callback( [[NSArray alloc] initWithObjects:@"NO", nil]);
-        
     }
-    
-}
-RCT_EXPORT_METHOD(openAPPStore:(NSString *)storeappID ){
-    //此处加入应用在app store的地址，方便用户去更新，一种实现方式如下
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://itunes.apple.com/us/app/id%@?ls=1&mt=8", storeappID]];
-    [[UIApplication sharedApplication] openURL:url];
-    
 }
 @end
