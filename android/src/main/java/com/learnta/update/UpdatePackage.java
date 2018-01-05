@@ -16,11 +16,11 @@ public class UpdatePackage implements ReactPackage {
 
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
-        modules.add(new UpdateApp(reactContext));
+        modules.add(new UpdateAppModule(reactContext));
         return modules;
     }
 
-    @Override
+//    @Override
     public List<Class<? extends JavaScriptModule>> createJSModules() {
         return Collections.emptyList();
     }

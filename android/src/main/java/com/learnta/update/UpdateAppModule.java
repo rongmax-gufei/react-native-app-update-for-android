@@ -18,7 +18,7 @@ public class UpdateAppModule extends ReactContextBaseJavaModule {
 
     @Override
     public String getName() {
-        return "UpdateAppModule";
+        return "RCTUpdateAppModule";
     }
 
     @Override
